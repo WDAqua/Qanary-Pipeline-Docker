@@ -4,6 +4,9 @@
 
 For details about the Qanary framework see the information in the [Qanary Framework repository](https://github.com/WDAqua/Qanary).
 
+Currently, this is an alpha software artifact. Feedback is very much welcomed.
+
+
 ## Motivation
 
 Following the Qanary methodology, the [*Qanary QA Pipeline* component](https://github.com/WDAqua/Qanary/tree/master/qanary_pipeline-template) is the mediator between the [Qanary components](https://github.com/WDAqua/Qanary-question-answering-components) used to build a Question Answering system. Although it is meant to be customized (therefore the fragment *template* in the repository name) in many scenarios it has proven to be fulfilling its purpose without any change of the source code. Hence, if it is planned to implement a Qanary-driven Question Answering system with an off-the-shelf Qanary pipeline component, then the hereby provided Docker configuration will enable you to build and run easily the complete Qanary pipeline component from scratch. 
