@@ -4,7 +4,7 @@
 
 For details about the Qanary framework see the information in the [Qanary Framework repository](https://github.com/WDAqua/Qanary).
 
-Currently, this is an alpha software artifact. Feedback is very much welcomed.
+Currently, this is an alpha software artifact. Feedback is very much welcome.
 
 
 ## Motivation
@@ -35,7 +35,7 @@ docker build --tag "qanarypipeline" .
 ```
 
 ***Step 4:*** Start the Docker container
-Now, the Docker container will be started. Inside of the container the Qanary framework repository is cloned automatically, followed by building all Qanary framework components via Maven (which requires downloading many packages). Hence, the whole process might take a while.
+Now, the Docker container will be started. Inside the container the Qanary framework repository is cloned automatically, followed by building all Qanary framework components via Maven (which requires downloading many packages). Hence, the whole process might take a while.
 
 The Dockerfile already contains a predefined triplestore endpoint (Stardog) that can be used for test purposes (c.f., https://github.com/WDAqua/Qanary-Pipeline-Docker/blob/master/Dockerfile#L10). Change this line to connect to your own triplestore.
 
@@ -48,6 +48,13 @@ To start the component in the background (detached), you might use the following
 ```
 docker run --detach --publish 8080:8080 --name "qanarypipeline" qanarypipeline
 ```
+
+The Dockerfile does contain predefined values for the required configuration parameters:
+ * `qanary.triplestore` is set by default using a triplestore made available by one of the academic sponsors
+ * `server.host` is set by default to `http://127.0.0.1` to enable an easy first experiment on your local computer
+ * `server.port` is set by default to `8080` which is a very typical server port
+ You might also and can change these value to the ones you prefer.
+
 
 After the Qanary Pipeline component was built and started, it will be available at the standard URL which you might test using http://127.0.0.1:8080 (Spring Boot Admin UI) or http://127.0.0.1:8080/startquestionansweringwithtextquestion (a simple test UI).
 
